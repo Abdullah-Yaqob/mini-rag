@@ -1,3 +1,3 @@
-fastapi==0.110.2
-uvicorn==0.29.0
-python-multipart==0.0.9
+fastapi==0.110.2 #the web framework we are using
+uvicorn==0.29.0 #make fast api run as a web server
+python-multipart==0.0.9 #for handling file uploads
