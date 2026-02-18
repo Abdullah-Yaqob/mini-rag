@@ -3,3 +3,4 @@ uvicorn==0.29.0 #make fast api run as a web server
 python-multipart==0.0.9 #for handling file uploads
 python-dotenv==1.0.1 #for handling environment variables
 pydantic-settings==2.2.1 #for handling settings and configuration
+aiofiles==23.2.1 #for handling file operations asynchronously
