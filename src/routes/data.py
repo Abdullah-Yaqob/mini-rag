@@ -7,6 +7,7 @@ from models.enums.ResponseEnums import ResponseSignal
 import aiofiles
 from models import ResponseSignal
 import logging
+from .schemas.data import ProcessRequest
 
 logger = logging.getLogger('uvicorn.error') # this is the logger for the data route
 
@@ -14,6 +15,8 @@ data_router = APIRouter(
     prefix = "/api/v1/data",            #must start with /  #this is the prefix for all routes in this router, so all routes will start with /api/v1/data
     tags = ["api_v1" , "data"]            #this is the tag for all routes in this router, so all routes will be grouped under this tag in the documentation
 )
+
+
 
 @data_router.post("/upload/{project_id}")
 async def upload_data(project_id : str, file : UploadFile,
@@ -60,3 +63,12 @@ async def upload_data(project_id : str, file : UploadFile,
         },
        
     )
+
+
+
+@data_router.post("/process/{project_id}")
+async def process_endpoint(project_id : str ,process_request : ProcessRequest):
+
+    file_id = process_request.file_id
+
+    return
